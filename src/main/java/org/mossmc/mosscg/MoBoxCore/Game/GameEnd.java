@@ -61,7 +61,12 @@ public class GameEnd {
             @Override
             public void run() {
                 Bukkit.getOnlinePlayers().forEach(player -> {
-                    player.kickPlayer(ChatColor.GREEN + "游戏已结束！你已被强制返回大厅服务器！");
+                    if (gameEndServerTeleport) {
+                        player.kickPlayer(ChatColor.GREEN + "游戏已结束！你已被强制返回大厅服务器！");
+                    } else {
+                        player.kickPlayer(ChatColor.GREEN + "游戏已结束！服务器已重启！");
+                    }
+
                 });
                 Bukkit.shutdown();
             }
