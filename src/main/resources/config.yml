@@ -1,0 +1,19 @@
+#MoBoxCore By MossCG
+#插件配置文件
+
+#各类声音名称
+#具体见 https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+
+#倒计时声音名称
+#低版本用CLICK
+#高版本用BLOCK_DISPENSER_FAIL
+countdownSound: BLOCK_DISPENSER_FAIL
+#倒计时结束游戏开始声音名称
+#低版本用ENDERDRAGON_GROWL
+#高版本用ENTITY_ENDER_DRAGON_GROWL
+gameStartSound: ENTITY_ENDER_DRAGON_GROWL
+
+#BC信息通道
+#原版Bungeecord就填BungeeCord
+#使用PlayerBalancer就填playerbalancer:main
+bungeeChannel: "playerbalancer:main"

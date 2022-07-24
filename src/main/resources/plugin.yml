@@ -1,0 +1,5 @@
+name: MoBoxCore
+version: 1.0-SNAPSHOT
+main: org.mossmc.mosscg.MoBoxCore.Main
+author: MossCG
+description: A plugin by MossCG for MoBoxMC.
