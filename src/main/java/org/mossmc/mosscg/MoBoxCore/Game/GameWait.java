@@ -14,6 +14,7 @@ public class GameWait {
     @SuppressWarnings({"deprecation", "unused"})
     public static void startWait() {
         remainSecond = GameBasicInfo.getGame.waitTime();
+        final boolean[] isReduced = {false};
         new BukkitRunnable() {
             @SuppressWarnings("CodeBlock2Expr")
             @Override
@@ -39,10 +40,12 @@ public class GameWait {
                     Main.instance.getServer().getOnlinePlayers().forEach(player -> {
                         player.sendTitle(titleMain,titleSub);
                     });
+                    isReduced[0] = false;
                 } else {
-                    if (playerNow >= GameBasicInfo.getGame.maxPlayer()) {
+                    if (playerNow >= GameBasicInfo.getGame.maxPlayer() && !isReduced[0]) {
                         Bukkit.broadcastMessage(ChatColor.GREEN+"玩家到齐，倒计时缩短！");
                         remainSecond = GameBasicInfo.getGame.reduceTime();
+                        isReduced[0] = true;
                     }
                     String titleMain = ChatColor.AQUA+String.valueOf(playerNow)+" "+ChatColor.WHITE+"/ "+ChatColor.AQUA+GameBasicInfo.getGame.maxPlayer();
                     String titleSub = ChatColor.GREEN+"游戏即将开始..."+ InfoCountDown.getRemainSecondString(remainSecond);
